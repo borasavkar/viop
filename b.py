@@ -113,11 +113,11 @@ for i in tickers:
     # time.sleep(1)
     
 
-st.write("### Name:  ",tradeable()[0])
-st.write("### Trade Recommendation:   ", tradeable()[1])
-st.write("""### Last Price:""",tradeable()[2])
-st.write("""### Earn Potential:""",tradeable()[3])
-st.write("""### Loss Potential:""",tradeable()[4])
-st.write("""### Target Sale Price:""",tradeable()[5])
-st.write("""### Stop-Loss Price:""",tradeable()[6])
+# st.write("### Name:  ",tradeable()[0])
+# st.write("### Trade Recommendation:   ", tradeable()[1])
+# st.write("""### Last Price:""",tradeable()[2])
+# st.write("""### Earn Potential:""",tradeable()[3])
+# st.write("""### Loss Potential:""",tradeable()[4])
+# st.write("""### Target Sale Price:""",tradeable()[5])
+# st.write("""### Stop-Loss Price:""",tradeable()[6])
     
