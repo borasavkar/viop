@@ -6,11 +6,16 @@ from pandas_datareader._utils import RemoteDataError
 from datetime import date, timedelta
 from dateutil.relativedelta import relativedelta
 import csv
+import streamlit as st
+st.write("""
+# BIST AL SAT ÖNERİLERİ
+
+""")
 
 tickerList = pd.read_csv("docs/Viop.csv")
 tickers=tickerList["Ticker"]
-# start_date=(date.today()-timedelta(days=360))
-start_date=(date.today()-relativedelta(years=1))
+start_date=(date.today()-timedelta(days=360))
+# start_date=(date.today()-relativedelta(years=1))
 data_source='yahoo'
 for i in tickers:
     ticker = i
@@ -84,5 +89,35 @@ for i in tickers:
                 str_target_SalePrice=str("{:.2f}".format(max10))
                 str_stopLoss=str("{:.2f}".format(min10))
                 return str_ticker,recommendation,str_lastPrice,str_earn_potential,str_loss_potential,str_target_SalePrice,str_stopLoss
-    print(tradeable())
+    # table={'Name:':tradeable()[0],'Trade Recommendation:':tradeable()[1],'Last Price:':tradeable()[2],'Earn Potential:':tradeable()[3],'Loss Potential:':tradeable()[4],'Target Sales Price:':tradeable()[5],'Stop-Loss:':tradeable()[6]}
+    # newDf=pd.Series(table)
+    # st.title(ticker)
+    # st.write(newDf[1])
+    # # newDf=pd.Series(table)
+    # st.write(newDf)
+    # # st.write(tradeable())
+    st.write(tradeable()[0],tradeable()[1])
+  
+    # Get some data.
+    # data = c
+    # data2 = h
+    # data3 = l
+    
+
+    # # Show the data as a chart.
+    # chart = st.area_chart(data)
+    # chart.add_rows(data2)
+    # chart.add_rows(data3)
+
+    # Wait 1 second, so the change is clearer.
+    # time.sleep(1)
+    
+
+st.write("### Name:  ",tradeable()[0])
+st.write("### Trade Recommendation:   ", tradeable()[1])
+st.write("""### Last Price:""",tradeable()[2])
+st.write("""### Earn Potential:""",tradeable()[3])
+st.write("""### Loss Potential:""",tradeable()[4])
+st.write("""### Target Sale Price:""",tradeable()[5])
+st.write("""### Stop-Loss Price:""",tradeable()[6])
     
