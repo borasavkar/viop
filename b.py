@@ -96,7 +96,9 @@ for i in tickers:
     # # newDf=pd.Series(table)
     # st.write(newDf)
     # # st.write(tradeable())
-    st.write(tradeable()[0],tradeable()[1])
+    # table={'Name:':tradeable()[0],'Trade Recommendation:':tradeable()[1],'Last Price:':tradeable()[2],'Earn Potential:':tradeable()[3],'Loss Potential:':tradeable()[4],'Target Sales Price:':tradeable()[5],'Stop-Loss:':tradeable()[6]}
+    # st.write(table)
+    st.write(tradeable()[0]," --- ",tradeable()[1])
   
     # Get some data.
     # data = c
